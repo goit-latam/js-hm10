@@ -1,0 +1,22 @@
+{{#each this}}
+  <div class='country-wrapper'>
+    <img class='country-flag' src={{flags.svg}} alt='flag' width='150' height='70' />
+    <h2 class='country-name'>{{name.official}}</h2>
+  </div>
+  <div class='country-container'>
+    <p class='country-description'>Capital:{{capital}}</p>
+    <p class='country-description'>Population:{{population}}</p>
+    <p class='country-description'>
+      <span class='country-language'>Languages:</span>
+      {{#each languages}}
+        {{#if @last}}
+          <span class='country-language'>{{this}}</span>
+        {{else}}
+          <span class='country-language'>{{this}},</span>
+        {{/if}}
+      {{/each}}
+
+    </p>
+  </div>
+
+{{/each}}
